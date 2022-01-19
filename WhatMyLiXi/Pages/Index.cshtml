@@ -6,41 +6,162 @@
 <style>
 
     img {
-max-width:100%;
-max-height:100%;
-}
+        max-width: 100%;
+        max-height: 100%;
+    }
 
-.landscape {
-    height: 350px;
-    width: auto;
-}
+    .landscape {
+        height: 350px;
+        width: auto;
+        align-content:center;
+        align-items:center;
+    }
 
-#lixi1, #lixi2, #lixi3, #lixi4, #lixi5{
-transition:all 1s ease-in-out
-}
+    #lixi1, #lixi2, #lixi3, #lixi4, #lixi5 {
+        transition: all .25s ease-in-out
+    }
 
-#lixi1:hover, #lixi2:hover, #lixi3:hover, #lixi4:hover, #lixi5:hover{
-    margin-top:-50px
-}
+        #lixi1:hover, #lixi2:hover, #lixi3:hover, #lixi4:hover, #lixi5:hover {
+            margin-top: -50px
+        }
 
+
+
+    .thecard {
+        position: relative;
+        width: 230px;
+        height: 320px;
+    }
+
+
+    .card_inner {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: all 0.5s ease;
+        cursor: pointer;
+    }
+
+        .card_inner.is-flipped {
+            transform: rotateY(180deg)
+        }
+
+    .card_face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+    }
+
+    .font_card {
+    }
+
+    .back_card {
+        transform: rotateY(180deg)
+    }
 
 </style>
 
 
-<div style="height:100px" >
+
+
+
+
+<div style="height:100px"> </div>
 </div>
 
-    <div class="landscape">
+<div class="landscape row">
 
-    <img src="~/Images/lixi.png" id="lixi1"  />
+    <div class="thecard">
+        <div class="card_inner" id="card_inner_id1">
+            <div class="card_face font_card">
+                <img src="~/Images/lixi.png" id="lixi1" />
+            </div>
+            <div class="card_face back_card">
+                <img src="~/Images/100.jpg" id="lixi1" />
+            </div>
 
-    <img src="~/Images/lixi.png" id="lixi2"   />
+        </div>
 
-    <img src="~/Images/lixi.png" id="lixi3"     />
 
-    <img src="~/Images/lixi.png" id="lixi4"    />
 
-    <img src="~/Images/lixi.png" id="lixi5"    />
     </div>
 
+    <div class="thecard">
+        <div class="card_inner" id="card_inner_id2">
+            <div class="card_face font_card">
+                <img src="~/Images/lixi.png" id="lixi1" />
+            </div>
+            <div class="card_face back_card">
+                <img src="~/Images/100.jpg" id="lixi1" />
+            </div>
 
+        </div>
+
+    </div>
+
+    <div class="thecard">
+        <div class="card_inner" id="card_inner_id3">
+            <div class="card_face font_card">
+                <img src="~/Images/lixi.png" id="lixi1" />
+            </div>
+            <div class="card_face back_card">
+                <img src="~/Images/100.jpg" id="lixi1" />
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="thecard">
+        <div class="card_inner" id="card_inner_id4">
+            <div class="card_face font_card">
+                <img src="~/Images/lixi.png" id="lixi1" />
+            </div>
+            <div class="card_face back_card">
+                <img src="~/Images/100.jpg" id="lixi1" />
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="thecard">
+        <div class="card_inner" id="card_inner_id5">
+            <div class="card_face font_card">
+                <img src="~/Images/lixi.png" id="lixi1" />
+            </div>
+            <div class="card_face back_card">
+                <img src="~/Images/100.jpg" id="lixi1" />
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+        var card1 = document.getElementById("card_inner_id1");
+        var card2 = document.getElementById("card_inner_id2");
+        var card3 = document.getElementById("card_inner_id3");
+        var card4 = document.getElementById("card_inner_id4");
+        var card5 = document.getElementById("card_inner_id5");
+
+        attachFlipEvent(card1);
+        attachFlipEvent(card2);
+        attachFlipEvent(card3);
+        attachFlipEvent(card4);
+        attachFlipEvent(card5);
+
+    function attachFlipEvent(card) {
+        card.addEventListener('click', function(){
+             card.classList.toggle('is-flipped');
+            
+        });
+    }
+</script>
