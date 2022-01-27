@@ -78,8 +78,8 @@
             <div class="card_face font_card">
                 <img src="~/Images/lixi.png" id="lixi1" />
             </div>
-            <div class="card_face back_card">
-                <img src="~/Images/1.png" id="lixi1" />
+            <div class="card_face back_card" id="money1">
+              
             </div>
 
         </div>
@@ -93,8 +93,8 @@
             <div class="card_face font_card">
                 <img src="~/Images/lixi.png" id="lixi1" />
             </div>
-            <div class="card_face back_card">
-                <img src="~/Images/10.png" id="lixi2" />
+            <div class="card_face back_card" id="money2">
+               
             </div>
 
         </div>
@@ -106,8 +106,8 @@
             <div class="card_face font_card">
                 <img src="~/Images/lixi.png" id="lixi1" />
             </div>
-            <div class="card_face back_card">
-                <img src="~/Images/100.png" id="lixi3" />
+            <div class="card_face back_card" id="money3">
+              
             </div>
 
         </div>
@@ -119,8 +119,8 @@
             <div class="card_face font_card">
                 <img src="~/Images/lixi.png" id="lixi1" />
             </div>
-            <div class="card_face back_card">
-                <img src="~/Images/200.png" id="lixi4" />
+            <div class="card_face back_card" id="money4">
+               
             </div>
 
         </div>
@@ -132,8 +132,8 @@
             <div class="card_face font_card">
                 <img src="~/Images/lixi.png" id="lixi1" />
             </div>
-            <div class="card_face back_card">
-                <img src="~/Images/200.png" id="lixi5" />
+            <div class="card_face back_card" id="money5">
+               
             </div>
 
         </div>
@@ -144,7 +144,7 @@
 
 
 
-<script>
+<script type="text/javascript">
 
         var card1 = document.getElementById("card_inner_id1");
         var card2 = document.getElementById("card_inner_id2");
@@ -158,10 +158,54 @@
         attachFlipEvent(card4);
         attachFlipEvent(card5);
 
+        var monies = [
+        "Images/1.png",
+        "Images/10.png",
+        "Images/100.png",
+        "Images/20.png",
+        "Images/200.png",
+        "Images/25cent.png",
+        "Images/400.png",
+        "Images/50.png",
+        "Images/500.png",
+        "Images/8.png",
+        ]
+
+        shuffle(monies);
+
+        for(var i =0; i < monies.length;i++){
+            var img = document.createElement("img");
+
+            img.src = monies[i];
+
+            var moneyId = 'money' + (i+1);
+
+            var block = document.getElementById(moneyId);
+            block.appendChild(img);
+        }
+
+
     function attachFlipEvent(card) {
         card.addEventListener('click', function(){
              card.classList.toggle('is-flipped');
             
-        });
+        })}
+
+    function shuffle(array) {
+      let currentIndex = array.length,  randomIndex;
+
+      // While there remain elements to shuffle...
+      while (currentIndex != 0) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+          array[randomIndex], array[currentIndex]];
+      }
+
+      return array;
     }
 </script>
