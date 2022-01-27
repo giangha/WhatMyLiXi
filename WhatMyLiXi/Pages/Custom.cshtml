@@ -1,0 +1,52 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "How to set up li xi";
+}
+<h1>@ViewData["Title"]</h1>
+
+<style>
+      img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+      .landscape {
+        height: 350px;
+        width: auto;
+        align-content:center;
+        align-items:center;
+    }
+
+        .thecard {
+        position: relative;
+        width: 230px;
+        height: 320px;
+    }
+
+
+</style>
+
+<p>Add 5 random values seprate by comma at the end of URL when go back to Home tab ex: ?sources=1,2,3,4,5 will make li xi contain 1 2 3 4 5 dollars</p>
+
+<h1>Here are the random monies</h1>
+<div class="landscape row">
+     <div class="thecard">
+              <a></a>
+     </div>
+</div>
+
+<script>
+//    var folder = "Images/";
+
+//$.ajax({
+//    url : folder,
+//    success: function (data) {
+//        $(data).find("a").attr("href", function (i, val) {
+//            if( val.match(/\.(jpe?g|png|gif)$/) ) { 
+//                $("body").append( "<img src='"+ folder + val +"'>" );
+//            } 
+//        });
+//    }
+//});
+</script>

@@ -69,7 +69,6 @@
 
 
 <div style="height:100px"> </div>
-</div>
 
 <div class="landscape row">
 
@@ -159,21 +158,54 @@
         attachFlipEvent(card5);
 
         var monies = [
+        "Images/0.jpg",
         "Images/1.png",
         "Images/10.png",
         "Images/100.png",
+        "Images/2.png",
         "Images/20.png",
         "Images/200.png",
         "Images/25cent.png",
+        "Images/3.png",
+        "Images/300.png",
+        "Images/4.png",
         "Images/400.png",
+        "Images/5.png",
         "Images/50.png",
         "Images/500.png",
         "Images/8.png",
         ]
 
+        var url = window.location.href;
+
+        if(url.includes('sources')){
+
+
+            var sources = url.substr(url.indexOf('=') +1);
+
+            selectMonies = sources.split(',');
+
+            if(selectMonies.length == 5){
+
+                var selection = [];
+
+                for(var i =0;i<monies.length;i++){
+                    var amount = monies[i].match(/\d+/)[0];
+
+                    if(selectMonies.includes(amount)){
+                        selection.push(monies[i]);
+                    }
+                }
+
+                if(selection.length == 5){
+                    monies = selection;
+                }
+            }
+        }
+
         shuffle(monies);
 
-        for(var i =0; i < monies.length;i++){
+        for(var i =0; i < 5;i++){
             var img = document.createElement("img");
 
             img.src = monies[i];
