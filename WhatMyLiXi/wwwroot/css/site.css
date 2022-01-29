@@ -217,6 +217,7 @@ img {
     width: auto;
     align-content: center;
     align-items: center;
+    margin-top:150px
 }
 
 #lixi1, #lixi2, #lixi3, #lixi4, #lixi5 {
@@ -262,4 +263,29 @@ img {
 
 .back_card {
     transform: rotateY(180deg)
+}
+
+@media only screen and (max-width: 775px) {
+    .landscape {
+        margin-top: 310px
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    .landscape {
+        margin-top: 222px
+    }
+
+    .thecard {
+        position: relative;
+        width: 150px;
+        height: 230px;
+    }
+
+}
+
+@media only screen and (max-width: 300px) {
+    .landscape {
+        margin-top: 430px
+    }
 }
