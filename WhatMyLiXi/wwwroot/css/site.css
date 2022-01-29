@@ -257,6 +257,7 @@ img {
 }
 
 .font_card {
+    transform: rotateY(360deg)
 }
 
 .back_card {
